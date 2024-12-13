@@ -14,12 +14,20 @@ import img9 from '../../assets/home/slide3.jpg'
 import img10 from '../../assets/home/slide4.jpg'
 import img11 from '../../assets/home/slide5.jpg'
 import chefServiceImg from '../../assets/home/chef-service.jpg'
+import Typewriter from 'react-ts-typewriter';
+import SimpleParallax from "simple-parallax-js";
+
+import { motion } from "motion/react"
+
 
 
 
 const Banner = () => {
     return (
-        <div className='w-full m-auto'>
+        <motion.div initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }} className='w-full m-auto'>
+
+
             <Carousel>
                 <div>
                     <img src={img1} alt="" />
@@ -58,6 +66,7 @@ const Banner = () => {
             </div>
 
 
+
             <div className=' flex '>
                 <div className="carousel rounded-box m-auto max-w-xl space-x-2 ">
                     <div className="carousel-item w-1/2">
@@ -87,16 +96,25 @@ const Banner = () => {
                     </div>
 
                 </div>
+
             </div>
 
 
+
             <div className="hero mt-3 lg:mt-10">
-                <div className="hero-overlay bg-opacity-60"><img src={chefServiceImg} alt="" /></div>
+                <div className="hero-overlay bg-opacity-60">
+
+                    <SimpleParallax>
+                        <img src={chefServiceImg} alt="" />
+                    </SimpleParallax>
+                </div>
                 <div className="hero-content text-neutral-content text-center">
-                    <div className="max-w-3xl bg-opacity-70 bg-slate-800 rounded-tl-2xl rounded-br-2xl">
+                    <div className="max-w-3xl bg-opacity-80 bg-slate-800 rounded-tl-2xl rounded-br-2xl">
 
                         <div className=' lg:p-10'>
-                            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                            <div className='mb-5 text-5xl font-bold'>
+                                <Typewriter text='HELLO THERE' speed='5' />
+                            </div>
                             <p className="mb-5">
                                 Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                                 quasi. In deleniti eaque aut repudiandae et a id nisi.
@@ -106,7 +124,8 @@ const Banner = () => {
                 </div>
             </div>
 
-        </div>
+
+        </motion.div>
     );
 };
 

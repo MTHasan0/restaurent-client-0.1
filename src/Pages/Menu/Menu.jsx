@@ -68,7 +68,15 @@ const Menu = () => {
 
                 </div>
             </div>
-            
+            <div className='text-center mt-4 lg:mt-10'>
+                <button className='text-white btn bg-gradient-to-b from-orange-100 to-orange-700 border-t-0'>View full menu</button>
+            </div>
+            <div className=' w-full mt-4 lg:mt-10'>
+                <div className=' bg-black w-full h-[6em] flex items-center justify-center'>
+                    <p className=' text-white  text-2xl font-bold '>Call us on +32470137244</p>
+                </div>
+            </div>
+
         </div>
     );
 };
